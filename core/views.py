@@ -6,9 +6,7 @@ import data
 
 
 def index(request):
-    notes = data.Notes
-    breakpoint()
-    # return HttpResponse("This is a text response, unrelated to the database.")
+    notes = data.NOTES
     #The notes below is a dictionary.
     return render(request, 'base.html', {'notes': notes})
 
