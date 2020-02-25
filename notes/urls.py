@@ -20,6 +20,7 @@ from core import views
 urlpatterns = [
     path('', views.notes_list, name='notes_list'),
     path('notes/<int:pk>', views.notes_detail, name="notes-detail"),
+    <a href="{% url '' %"}><tr><td>{{notes.title}}</td><td>{{notes.detials}}</td><tr></a>
     path('admin/', admin.site.urls),
     
 ]
