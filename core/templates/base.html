@@ -3,33 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- This is a block tag below -->
-    {% block title %}
-    <title>Notes</title>{% endblock %}
+    <meta name="viewport" content="width={device-width}, initial-scale=1.0"> {% block title %}
+    <title>note</title>{% endblock %}
     <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta.25/shoelace.css">
-
 </head>
 
 <body>
-    <!-- This is a block tag in the body -->
-    {% block content %} {% endblock %}
-
-
-    <h1>This is MY Web Page! Shazam!</h1>
-
-    {% for note in notes.values %}
-
-
-    <h4>{{note.title}}</h4>
-
-
-    {% endfor %}
-
-
-
-
+    {% block content %}{% endblock %}
 </body>
 
 </html>

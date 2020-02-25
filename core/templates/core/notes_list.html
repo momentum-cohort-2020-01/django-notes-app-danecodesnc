@@ -1,20 +1,19 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content%}
 <table>
     <thead>
         <tr>
-            <th>
-                MY NOTES
-            </th>
+            <th>My NOTES</th>
+            <th>Details</th>
         </tr>
     </thead>
     <tbody>
         {% for note in notes.values %}
         <tr>
-            <tr>
-                <a href="{% url 'notes-tetail' 1 %}></a> <td>{{todo.title}}</td><td>{{todo.details}}</td></tr></a>
-            
-     
-        {% endfor %}
+            <td>{{note.title}}</td>
+            <td>{{note.body}}</td>
+        </tr>
+    </tbody>
+    {% endfor %}
     </tbody>
 </table>
 {% endblock %}
