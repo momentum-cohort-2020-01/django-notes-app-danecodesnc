@@ -1,5 +1,12 @@
-{% extends 'base.html' %} {% block content %}
-<dl><dt>{{note.title}}</dt>
-    <dd>{{note.body}}</dd>
-</dl>
+{% extends "base.html" %}
+
+<div>
+    <a href="/">👈 back to notes list </a>
+</div>
+
+{% block content %}
+<h2>Note: {{ note.title }} </h2>
+<div class="note" id="{{ note.pk }}">
+    <p style="margin: 0 25px 50px;">{{ note.body }}</p>
+</div>
 {% endblock %}
