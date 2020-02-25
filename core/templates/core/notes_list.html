@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+<table>
+    <thead>
+        <tr>
+            <th>
+                MY NOTES
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for note in notes.values %}
+        <tr>
+            <td>{{todo.title}}</td>
+            <td>{{todo.details}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
