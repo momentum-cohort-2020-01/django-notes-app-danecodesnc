@@ -1,9 +1,12 @@
 from django import forms
 
-from .models import Post
+from .models import Note
 
-class PostForm(forms.ModelForm):
+class NoteForm(forms.ModelForm):
 
     class Meta:
-        model = Post
-        fields = ('title', 'text',)
+        model = Note
+        fields = ('title', 'body',)
+
+
+

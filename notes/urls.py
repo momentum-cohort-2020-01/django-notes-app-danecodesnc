@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
 from core import views
 
 urlpatterns = [
@@ -23,6 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
-path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
+path('note/<int:pk>/edit/', views.note_edit, name='note_edit'),
 
 
