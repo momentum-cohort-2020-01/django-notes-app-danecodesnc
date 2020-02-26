@@ -23,8 +23,7 @@ urlpatterns = [
     path('notes/new', views.notes_new, name='notes_new'),
     path('notes/<int:pk>', views.notes_detail, name='notes_detail'),
     path('admin/', admin.site.urls),
-    # path('note/<int:pk>/edit/', views.note_edit, name='note_edit'),
-    
+ 
 ]
 
 
