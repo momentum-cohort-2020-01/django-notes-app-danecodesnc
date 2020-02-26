@@ -1,6 +1,7 @@
-{% extends "base.html" %}
+<!-- Pulls all the info from the base.html page -->
+{% extends "base.html" %} {% block title %}
 <h2>Note list</h2>
-{%block content%} {% for note in notes %}
+{% endblock %} {%block content%} {% for note in notes %}
 <div class="note" id="{{note.pk}}">
     <a style="font-weight: bold;" href="{% url 'notes_detail' note.pk %}">{{ note.title }}</a>
     <p>{{ note.body }}</p>
