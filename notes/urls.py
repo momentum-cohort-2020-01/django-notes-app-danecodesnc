@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
+path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
 
 
