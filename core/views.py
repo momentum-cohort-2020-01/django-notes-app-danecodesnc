@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from .models import Note
+from .forms import NoteForm
 
 
 def  notes_list(request):
@@ -12,30 +13,52 @@ def notes_detail(request, pk):
     note = Note.objects.get(pk=pk)
     return render(request, 'core/notes_detail.html', {'note': note, 'pk': pk})
 
-def note_new(request):
-    if request.method == "POST":
-        form = NoteForm(request.NOTE)
+
+def notes_new(request):
+    if request.method == 'POST':
+        form = NoteForm(request.POST)
         if form.is_valid():
-            note = note.save(commit=False)
-            note.author = request.user
-            note.published_date = timezone.now()
-            note.save()
-            return redirect('note_detail', pk=note.pk)
+            note = form.save()
+            return redirect('notes_detail', pk=note.pk)
     else:
         form = NoteForm()
-    return render(request, 'blog/note_edit.html', {'form': form})
 
 
-    def note_edit(request, pk):
-        note = get_object_or_404(Note, pk=pk)
-    if request.method == "POST":
-        form = NoteForm(request.NOTE, instance=note)
-        if form.is_valid():
-            note = form.save(commit=False)
-            note.author = request.user
-            note.published_date = timezone.now()
-            note.save()
-            return redirect('note_detail', pk=note.pk)
-    else:
-        form = NoteForm(instance=note)
-    return render(request, 'blog/note_edit.html', {'form': form})
+    return render(request, 'core/notes_new.html', {'form': form})
+
+
+
+
+
+
+
+
+
+
+#  if request.method == "POST":
+#         form = NoteForm(request.NOTE)
+#         if form.is_valid():
+#             note = note.save(commit=False)
+#             note.author = request.user
+#             note.published_date = timezone.now()
+#             note.save()
+#             return redirect('note_detail', pk=note.pk)
+#     else:
+#         form = NoteForm()
+#     return render(request, 'core/note_detail.html', {'form': form})
+
+
+#     def note_edit(request, pk):
+#         note = get_object_or_404(Note, pk=pk)
+#     if request.method == "POST":
+#         form = NoteForm(request.NOTE, instance=note)
+#         if form.is_valid():
+#             note = form.save(commit=False)
+#             note.author = request.user
+#             note.published_date = timezone.now()
+#             note.save()
+#             return redirect('note_detail', pk=note.pk)
+#     else:
+#         form = NoteForm(instance=note)
+#     return render(request, 'core/note_detail.html', {'form': form})
+   
