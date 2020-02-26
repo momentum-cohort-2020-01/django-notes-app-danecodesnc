@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 from .models import Note
-from .forms import NoteForm
+# from .forms import NoteForm
 
 
 def  notes_list(request):
@@ -17,18 +17,15 @@ def notes_detail(request, pk):
 def notes_new(request):
     if request.method == 'POST':
         form = NoteForm(request.POST)
-        if form.is_valid():
-            note = form.save()
-            return redirect('notes_detail', pk=note.pk)
+        # if form.is_valid():
+        note = form.save()
+        return redirect('notes_detail', pk=note.pk)
+    
     else:
         form = NoteForm()
 
 
-    return render(request, 'core/notes_new.html', {'form': form})
-
-
-
-
+    return render(request, 'core/post_edit.html', {'form': form})
 
 
 

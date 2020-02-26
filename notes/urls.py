@@ -20,12 +20,13 @@ from core import views
 
 urlpatterns = [
     path('', views.notes_list, name='notes_list'),
-    path('notes/new', views.note_new, name='notes_new'),
+    path('notes/new', views.notes_new, name='notes_new'),
     path('notes/<int:pk>', views.notes_detail, name='notes_detail'),
     path('admin/', admin.site.urls),
-    path('post/new/', view.post_new, name='post_new')
+    # path('note/<int:pk>/edit/', views.note_edit, name='note_edit'),
+    
 ]
 
-path('note/<int:pk>/edit/', views.note_edit, name='note_edit'),
+
 
 
