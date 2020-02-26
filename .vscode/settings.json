@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "/Users/daneedwards/.local/share/virtualenvs/django-notes-app-danecodesnc-UtSTLSTK/bin/python"
+    "python.pythonPath": "/Users/daneedwards/.local/share/virtualenvs/django-notes-app-danecodesnc-UtSTLSTK/bin/python",
+    "python.linting.enabled": false
 }

@@ -12,7 +12,6 @@ def notes_detail(request, pk):
     note = Note.objects.get(pk=pk)
     return render(request, 'core/notes_detail.html', {'note': note, 'pk': pk})
 
-
 def note_new(request):
     if request.method == "POST":
         form = NoteForm(request.NOTE)
