@@ -27,8 +27,21 @@ def notes_new(request):
 
     return render(request, 'core/notes_new.html', {'form': form})
 
-    def notes_edit(request, pk): 
-        notes = get_object_or_404(Note, pk=pk)
+def notes_edit(request, pk): 
+    note = get_object_or_404(Note, pk=pk)
+    if request.method == 'POST':
+        form = NoteForm(request.POST, instance=note)
+        if form.is_valid():
+            form.save()
+            return redirect('notes_detial', pk=note.pk)
+
+    else:
+        form = NoteForm(instance=note)
+
+    return render(request, 'core/notes_edit.html', {"form": form})
+
+
+    
 
 
 

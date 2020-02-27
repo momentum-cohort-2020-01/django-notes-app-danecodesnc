@@ -1,0 +1,13 @@
+{% extend 'base.html' %}
+{% block title %}<title>Dane Notes Edit</title>{% endblock %}
+
+{% block content %}
+
+<form method="POST" class="post-form">
+    {% csrf_token %}
+    {{form.as_p}}
+    <a href="{% url 'note_new' %} class="top-menu">
+        <button type="submit" class="button" value="Update">Save</button>
+    </a>
+</form>
+{% endblock %}

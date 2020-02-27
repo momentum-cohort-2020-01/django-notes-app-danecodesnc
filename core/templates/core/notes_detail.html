@@ -1,12 +1,17 @@
- {% extends "base.html" %}
+
 
 <div>
     <a href="/">👈 back to notes list </a>
 </div>
 
+{% extends "base.html" %}
+
 {% block content %}
 <h2>Note: {{ note.title }} </h2>
 <div class="note" id="{{ note.pk }}">
     <p style="margin: 0 25px 50px;">{{ note.body }}</p>
+    <a href="{% url 'notes_edit' note.pk%}" class="button">Edit</a>
+    <a href="{% url 'notes_edit' note.pk%}" class="button button-danger">Delete</a>
+
 </div>
 {% endblock %}
