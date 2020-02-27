@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<form method="POST" class="post-form">
+<form action="POST" class="post-form">
     {% csrf_token %}
     {{form.as_p}}
     <a href="{% url 'note_new' %} class="top-menu">

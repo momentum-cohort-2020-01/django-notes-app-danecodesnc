@@ -1,7 +1,5 @@
-
-
 <div>
-    <a href="/">👈 back to notes list </a>
+    <a href="/">Back to Notes List</a>
 </div>
 
 {% extends "base.html" %}
@@ -11,7 +9,7 @@
 <div class="note" id="{{ note.pk }}">
     <p style="margin: 0 25px 50px;">{{ note.body }}</p>
     <a href="{% url 'notes_edit' note.pk%}" class="button">Edit</a>
-    <a href="{% url 'notes_edit' note.pk%}" class="button button-danger">Delete</a>
+    <a href="{% url 'notes_delete' note.pk%}" class="button button-danger">Delete</a>
 
 </div>
 {% endblock %}
